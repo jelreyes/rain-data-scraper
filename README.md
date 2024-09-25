@@ -2,10 +2,10 @@
 
 ## Overview
 
-This repository contains two Python scripts designed to scrape and process data from the PAGASA (Philippine Atmospheric, Geophysical, and Astronomical Services Administration) website:
+This repository contains two Python scripts designed to scrape and process data from the [PAGASA (Philippine Atmospheric, Geophysical, and Astronomical Services Administration)](https://bagong.pagasa.dost.gov.ph/) website:
 
-1. Rain Data Scraper: Scrapes automated rain gauge data from the PAGASA website and saves it to a CSV file.
-2. PAGASA Stations Script: Extracts latitude and longitude information for various PAGASA stations from PDF files linked on the PAGASA site.
+1. **pagasa_rain.py**: Scrapes automated rain gauge data from the PAGASA website and saves it to a CSV file.
+2. **pagasa_stations**: Extracts latitude and longitude information for various PAGASA stations from PDF files linked on the PAGASA site.
 
 ## Requirements
 
@@ -21,9 +21,9 @@ You can install the required packages using pip:
 pip install requests beautifulsoup4 pandas PyPDF2
 ```
 
-## Rain Data Scraper
+## pagasa_rain.py
 
-## Functions
+### Functions
 
 * fetch_soup(url): Fetches HTML content from the specified URL and returns a BeautifulSoup object.
 * get_table(response): Extracts the <tbody> section from the HTML response.
@@ -32,10 +32,10 @@ pip install requests beautifulsoup4 pandas PyPDF2
 * write_loc(data): Processes the DataFrame to associate each rain gauge with its location.
 * main(): Orchestrates the workflow of scraping data, processing it, and saving it to a CSV file.
 
-## Output
+### Output
 The output will be saved in a CSV file named pagasa_rain.csv, containing columns for site_id, site_name, hourly_rain, elevation, and ts_updated.
 
-## PAGASA Stations Script
+## pagasa_stations
 
 ## Functions
 
@@ -47,13 +47,13 @@ The output will be saved in a CSV file named pagasa_rain.csv, containing columns
 
 The output will be a pandas DataFrame containing:
 
-* station: Name of the PAGASA station.
+* station: name of the PAGASA station
 * latitude
 * longitude
 
 ## Notes
 
-Ensure that the PAGASA website structure remains unchanged; otherwise, the scripts may require updates to adapt to any changes in the HTML structure or PDF formatting.
+Ensure that the PAGASA website structure remains unchanged; otherwise, the scripts may require updates to adapt to any HTML structure or PDF formatting changes.
 The scripts suppress SSL certificate verification (verify=False in requests.get) for simplicity, but it is advisable to enable SSL verification in production environments.
 
 ## Author
