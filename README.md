@@ -4,8 +4,8 @@
 
 This repository contains two Python scripts designed to scrape and process data from the [PAGASA (Philippine Atmospheric, Geophysical, and Astronomical Services Administration)](https://bagong.pagasa.dost.gov.ph/) website:
 
-1. **pagasa_rain.py**: Scrapes automated rain gauge data from the PAGASA website and saves it to a CSV file.
-2. **pagasa_stations**: Extracts latitude and longitude information for various PAGASA stations from PDF files linked on the PAGASA site.
+1. **pagasa_rain.py**: Scrapes automated rain gauge data from the [PAGASA Latest Automated Rain Gauges](https://bagong.pagasa.dost.gov.ph/automated-rain-gauge) and saves it to a CSV file.
+2. **pagasa_stations**: Extracts latitude and longitude information for various PAGASA stations from PDF files in the [PAGASA pub files](https://pubfiles.pagasa.dost.gov.ph/cds/).
 
 ## Requirements
 
@@ -33,17 +33,17 @@ pip install requests beautifulsoup4 pandas PyPDF2
 * main(): Orchestrates the workflow of scraping data, processing it, and saving it to a CSV file.
 
 ### Output
-The output will be saved in a CSV file named pagasa_rain.csv, containing columns for site_id, site_name, hourly_rain, elevation, and ts_updated.
+The output will be saved in a CSV file named **pagasa_rain.csv**, containing columns for site_id, site_name, hourly_rain, elevation, and ts_updated.
 
 ## pagasa_stations
 
-## Functions
+### Functions
 
 * fetch_soup(url): Fetches HTML content from the specified URL and returns a BeautifulSoup object.
 * dms_to_decimal(degrees, minutes, seconds): Converts DMS (Degrees, Minutes, Seconds) coordinates to decimal format.
 * get_loc(): Scrapes the PAGASA website for PDF files, extracts latitude and longitude for each station, and returns a DataFrame with station names, latitudes, and longitudes.
 
-## Output
+### Output
 
 The output will be a pandas DataFrame containing:
 
